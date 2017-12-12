@@ -15,7 +15,7 @@ def text_transform(text):
     text = text.replace('[^a-zA-Z0-9]', ' ', regex=True)
     return text
 
-vec=TfidfVectorizer(min_df=5)
+vec=TfidfVectorizer(min_df=4)
 X_train_text=vec.fit_transform(text_transform(train['FullDescription']))
 
 train['LocationNormalized'].fillna('nan', inplace=True)
